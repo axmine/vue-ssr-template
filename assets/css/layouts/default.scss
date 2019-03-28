@@ -1,0 +1,55 @@
+html, body ,
+body > div,
+body > div > div {
+  width: 100%;
+  height: 100%;
+}
+
+.yocss-app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.yocss-hd {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: $headHeight;
+  line-height: $headHeight;
+  background-color: #fff;
+  z-index: 2;
+  box-shadow: 0 2px 8px #f0f1f2;
+}
+
+.yocss-bd {
+  position: relative;
+  padding-top: $headHeight + 8;
+  // padding-bottom: 150px;
+  width: 100%;
+  z-index: 1;
+}
+
+.yocss-ft {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  min-height: 150px;
+  background-color: #444547;
+  z-index: 2;
+  .website-right {
+    color: #fff;
+    .yocss-ft__logo {
+      margin: 0 auto 1em;
+      width: 48px;
+      height: 48px;
+      background: url('~assets/img/icon.png') center center no-repeat #2d2d2d;
+      background-size: 40px 40px;
+      border-radius: 6px;
+    }
+    a {
+      color: #fff;
+    }
+  }
+}
