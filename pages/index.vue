@@ -1,6 +1,16 @@
 <template>
   <div class="yocss-bd">
     <div class="container">
+      <a
+        href="javascript:void(0);"
+        @click="getData"
+      >Test Request</a>
+      <p>aabbcc</p>
+      <p>aabbcc</p>
+      <p>aabbcc</p>
+      <p>aabbcc</p>
+      <p>aabbcc</p>
+      <p>aabbcc</p>
       <p>aabbcc</p>
       <p>aabbcc</p>
       <p>aabbcc</p>
@@ -39,6 +49,16 @@ export default {
   },
   data() {
     return { }
+  },
+  methods: {
+    async getData() {
+      const data = await this.$post('login', { user: 'admin', pass: 'admin' })
+      if (data.code === process.env.successCode) {
+        this.$message.success(data.info)
+      } else {
+        this.$message.error(data.info)
+      }
+    }
   }
 }
 </script>

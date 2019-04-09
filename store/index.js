@@ -16,6 +16,6 @@ export const actions = {
   },
   SetToken({ commit }, token) {
     commit('SET_TOKEN', token)
-    this.$post('/auth', { token })
+    this.$post('/auth', { token }, { baseURL: '' })
   }
 }

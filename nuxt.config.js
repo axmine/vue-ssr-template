@@ -1,5 +1,5 @@
 // const pkg = require('./package')
-const config = require('./app-config/config')
+const config = require('./config')
 const env = process.env.NODE_ENV
 
 module.exports = {
@@ -8,6 +8,7 @@ module.exports = {
     baseUrl: config.api[env],
     transformRequest: config.transformRequest,
     successCode: config.successCode,
+    nullCode: config.nullCode,
     errorCode: config.errorCode
   },
   server: config.server,

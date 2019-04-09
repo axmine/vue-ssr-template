@@ -3,20 +3,10 @@
     <div class="container">
       <base-logo
         class="fl"
-        style="padding: 5px; width: 60px; height: 60px;"
+        style="padding: 15px; width: 70px; height: 70px;"
       />
       <!-- 导航 -->
-      <nav
-        class="fl"
-        style="margin-left: 50px; font-size: 16px;"
-      >
-        <nuxt-link to="/">
-          首页
-        </nuxt-link>
-        <nuxt-link to="/">
-          新闻
-        </nuxt-link>
-      </nav>
+      <head-nav class="fl" />
       <!-- /导航 -->
       <base-login
         class="fr"
@@ -26,7 +16,11 @@
 </template>
 
 <script>
+import HeadNav from '@/components/layouts/common/head-nav.vue'
 export default {
-  name: 'AppHead'
+  name: 'AppHead',
+  components: {
+    HeadNav
+  }
 }
 </script>

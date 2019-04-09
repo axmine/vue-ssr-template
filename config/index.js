@@ -1,7 +1,7 @@
 // api 接口
 const api = {
-  development: 'http://wk.sihongedu.com/api/',
-  production: 'https://www.jiankao.wang/api/'
+  development: 'https://www.easy-mock.com/mock/5cac953cbf60940c8b8894bd/ssr/',
+  production: 'https://www.easy-mock.com/mock/5cac953cbf60940c8b8894bd/ssr/'
 }
 
 // 指定主机
@@ -32,6 +32,7 @@ const cdnJS = [
 const transformRequest = true
 // axios 请求成功的代码
 const successCode = '2000'
+const nullCode = '6000'
 // axios 严重错误的代码
 const errorCode = ['4003', '4005']
 
@@ -46,5 +47,6 @@ module.exports = {
   cdnJS,
   transformRequest,
   successCode,
+  nullCode,
   errorCode
 }

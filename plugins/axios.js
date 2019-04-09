@@ -7,7 +7,7 @@ export default function({ redirect, env, error, store }, inject) {
   const axios = Axios.create(
     Object.assign(
       {
-        baseURL: env.BASE_API,
+        baseURL: env.baseUrl,
         timeout: 300000 // 超时时间： 30s
       },
       // 数据转换
@@ -68,10 +68,11 @@ export default function({ redirect, env, error, store }, inject) {
         // axios 在客户端运行时
         if (process.client) { message.error(err.info) }
       } else { // 严重错误，如 token 失效，无权限等，这时需要客户重新登录
-        (process.client) ? Modal.alert(
+        (process.client) ? Modal.confirm(
           {
             title: err.info,
             okText: '确定',
+            cancelText: '取消',
             onOk() {
               console.log('点击了确定')
             }
