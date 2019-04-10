@@ -67,8 +67,34 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    vendor: ['axios', 'lodash'],
-    extractCSS: { allChunks: true },
+    // vendor: ['axios', 'lodash'],
+    // extractCSS: { allChunks: true },
+    optimization: {
+      splitChunks: {
+        // chunks: 'async',
+        chunks: 'all',
+        minSize: 30000,
+        // maxSize: 0,
+        maxSize: 240000,
+        minChunks: 1,
+        maxAsyncRequests: 5,
+        maxInitialRequests: 3,
+        automaticNameDelimiter: '~',
+        name: true,
+        cacheGroups: {
+          // vendors: ['axios', 'lodash'],
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10
+          },
+          default: {
+            minChunks: 1,
+            priority: -20,
+            reuseExistingChunk: true
+          }
+        }
+      }
+    },
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
